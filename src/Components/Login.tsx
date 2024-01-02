@@ -27,7 +27,7 @@ const Login = () => {
     e.preventDefault();
     const status = await loginWithEmailAndPasswordLocal(loginState.email, loginState.password);
     if (status === "success") {
-      navigate("/profile");
+      navigate("/");
     } else {
       setErrorMessage(status);
       setShowError(true);
