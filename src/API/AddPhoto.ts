@@ -1,5 +1,5 @@
 import { doc, getDoc, setDoc, Timestamp, updateDoc } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage";
+import { ref, uploadBytes, getDownloadURL, deleteObject, getMetadata } from "firebase/storage";
 import { db, storage } from "../firebase";
 
 async function uploadPhotoToFirebase(userId: any, photoFile: any) {
@@ -35,11 +35,19 @@ async function uploadPhotoToFirebase(userId: any, photoFile: any) {
 }
 
 export async function deletePhotoLocal(photoUrl: any, uid: any) {
-  try {
-    // Create a reference to the photo in Firebase Storage
-    const photoRef = ref(storage, photoUrl);
+  const photoRef = ref(storage, photoUrl);
+  // Delete the photo from Firebase Storage
+  console.log(photoRef);
+  const metadata = await getMetadata(photoRef);
+  if (metadata) {
     // Delete the photo from Firebase Storage
     await deleteObject(photoRef);
+    console.log("Photo deleted successfully");
+  } else {
+    console.log("File does not exist. Skipping deletion.");
+  }
+  try {
+    // Create a reference to the photo in Firebase Storage
     const userDocRef = doc(db, "photos", uid);
     // Fetch the current document data
     const userDocSnapshot = await getDoc(userDocRef);
