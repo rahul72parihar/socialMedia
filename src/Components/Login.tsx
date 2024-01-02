@@ -18,6 +18,11 @@ const Login = () => {
       [e.target.name]: e.target.value,
     }));
   };
+  const handleLoginWithDemo = async (e: any) => {
+    e.preventDefault();
+    setLoginState(() => ({ email: "test@gmail.com", password: "testtest" }));
+    console.log(loginState);
+  };
   const handleLogin = async (e: any) => {
     e.preventDefault();
     const status = await loginWithEmailAndPasswordLocal(loginState.email, loginState.password);
@@ -37,6 +42,7 @@ const Login = () => {
           name="email"
           placeholder="Email"
           onChange={handleChange}
+          value={loginState.email}
           required
         />
         <input
@@ -45,9 +51,19 @@ const Login = () => {
           name="password"
           placeholder="password"
           onChange={handleChange}
+          value={loginState.password}
           required
         />
         {showError && <p className="font-semibold text-red-500">{errorMessage}</p>}
+        <button
+          className="rounded-lg flex items-center bg-slate-300 dark:bg-slate-600 font-bold px-5 py-2 text-3xl gap-4 shadow-lg w-max mx-auto"
+          onClick={handleLoginWithDemo}
+        >
+          <div className="text-2xl">
+            <MdEmail />
+          </div>
+          Use Demo Email
+        </button>
         <button
           className="rounded-lg flex items-center bg-green-500 font-bold px-5 py-2 text-3xl gap-4 shadow-lg w-max mx-auto"
           onClick={handleLogin}

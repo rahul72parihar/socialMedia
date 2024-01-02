@@ -17,8 +17,8 @@ const UserGallery = ({ userId }: any) => {
         const userPhotos = snapshot.data().photos || [];
         setPhotos(userPhotos.reverse());
       }
+      setIsLoading(false);
     });
-    setIsLoading(false);
     return () => unsubscribe();
   }, [userId]);
 
