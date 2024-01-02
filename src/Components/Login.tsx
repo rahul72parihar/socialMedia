@@ -17,13 +17,11 @@ const Login = () => {
       ...prev,
       [e.target.name]: e.target.value,
     }));
-    console.log(loginState);
   };
   const handleLogin = async (e: any) => {
     e.preventDefault();
     const status = await loginWithEmailAndPasswordLocal(loginState.email, loginState.password);
     if (status === "success") {
-      console.log("succcess");
       navigate("/profile");
     } else {
       setErrorMessage(status);

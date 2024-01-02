@@ -14,6 +14,7 @@ const AddPage = () => {
   const inputFile: any = useRef(null);
 
   const handlePost = async () => {
+    setUploaded(false);
     if (!profileUser.uid) {
       setErrorMessage("User Not Found");
       return;
@@ -23,7 +24,6 @@ const AddPage = () => {
       return;
     }
     const status = await uploadPhotoToFirebase(profileUser.uid, selectedImage);
-    console.log("status", status);
     if (status != "success") {
       setErrorMessage(status);
     } else {
@@ -34,7 +34,6 @@ const AddPage = () => {
       if (inputFile && inputFile.current) {
         inputFile.current.value = "";
       }
-      console.log("Image Uploaded");
     }
   };
 

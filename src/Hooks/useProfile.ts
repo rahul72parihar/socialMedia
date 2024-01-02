@@ -12,7 +12,6 @@ const useProfile = () => {
     const profileDocRef = doc(db, "users", profileUser.uid);
 
     const unsubscribe = onSnapshot(profileDocRef, (docSnapshot) => {
-      console.log("Snapshot received");
       if (docSnapshot.exists()) {
         setProfileData(docSnapshot.data());
       } else {

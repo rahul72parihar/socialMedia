@@ -20,7 +20,6 @@ const RegisterPage = () => {
       ...prev,
       [e.target.name]: e.target.value,
     }));
-    console.log(registerState);
   };
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -72,11 +71,7 @@ const RegisterPage = () => {
       registerState.email,
       registerState.password
     );
-    console.log("====================================");
-    console.log(status);
-    console.log("====================================");
     if (status === "success") {
-      console.log("Successful");
       navigate("/login");
     } else {
       setErrorMessage(status.toString());
