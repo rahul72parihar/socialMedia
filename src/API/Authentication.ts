@@ -57,6 +57,7 @@ export const loginWithEmailAndPasswordLocal = async (email: string, password: st
     .then((userCredential) => {
       const user = userCredential.user;
       return "success";
+      console.log(user);
     })
     .catch((error) => {
       const errorMessage = error.message;
