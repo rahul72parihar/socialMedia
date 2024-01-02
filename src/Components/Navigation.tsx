@@ -11,7 +11,7 @@ function Navigation() {
   return (
     <div className="dark:bg-slate-800 bg-slate-300  flex justify-between items-center dark:text-white py-3 px-6 text-3xl font-bold">
       <Link to="/">
-        <button>RP SOCIAL</button>
+        <button>RP GALLERY</button>
       </Link>
       {!isLoggedIn && (
         <div className="flex gap-8 items-center">
