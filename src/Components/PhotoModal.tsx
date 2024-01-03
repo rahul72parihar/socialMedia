@@ -12,20 +12,24 @@ const PhotoModal = ({ closeModal, photo, uid }: any) => {
     }
   };
   return (
-    <div className=" fixed inset-0 bg-white dark:bg-black bg-opacity-50 dark:bg-opacity-50 w-full p-20 h-full text-white">
-      <div className="w-2/3 h-full mx-auto flex flex-col justify-center items-center">
-        <img className="h-2/3 mx-auto" src={photo.url} alt="user uploaded photo" />
+    <div className=" fixed inset-0 bg-white dark:bg-black bg-opacity-50 dark:bg-opacity-50 w-full h-full text-white">
+      <div className="w-screen h-screen  flex flex-col justify-center sm:justify-start mt-20 items-center">
+        <img
+          className="h-80 w-80 sm:w-auto sm:h-2/3 object-cover mx-auto"
+          src={photo.url}
+          alt="user uploaded photo"
+        />
         {errorMessage && <p className="text-red-500 text-xl font-semibold">{errorMessage}</p>}
         <div className="flex my-10">
           <button
-            className="text-3xl bg-red-600 px-4 py-2 rounded-lg font-bold"
+            className="sm:text-3xl bg-red-600 px-4 py-2 rounded-lg font-bold"
             onClick={handleDelete}
           >
             DELETE
           </button>
         </div>
         <button
-          className="fixed top-10 right-20 text-2xl bg-red-600 px-4 py-2 rounded-lg"
+          className="fixed top-2 right-5 sm:top-5 sm:right-10 sm:text-2xl bg-red-600 px-4 py-2 rounded-lg"
           onClick={closeModal}
         >
           Close

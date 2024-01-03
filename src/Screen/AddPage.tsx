@@ -55,10 +55,12 @@ const AddPage = () => {
   return (
     <>
       <Navigation></Navigation>
-      <div className="flex flex-1 flex-col w-4/5 items-center mx-auto my-6 gap-6">
-        {imageUrl && <img className="w-96 h-96 object-cover" src={imageUrl} alt="Preview" />}
+      <div className="flex flex-1 flex-col sm:w-4/5 items-center mx-auto my-6 gap-6">
+        {imageUrl && (
+          <img className="w-60 h-60 sm:w-96 sm:h-96 object-cover " src={imageUrl} alt="Preview" />
+        )}
         <input
-          className=" file:text-black dark:file:text-white file:bg-green-500 file:mx-2 font-semibold dark:text-white py-3 px-4 text-2xl bg-slate-100 dark:bg-slate-800 rounded-lg"
+          className=" file:text-black dark:file:text-white  file:bg-green-500 file:mx-2 font-semibold dark:text-white py-3 px-4 md:text-xl bg-slate-100 dark:bg-slate-800 rounded-lg "
           type="file"
           name="myImage"
           accept="image/*"
@@ -66,9 +68,9 @@ const AddPage = () => {
           onChange={handleUpload}
         />
         {errorMessage && <p className="text-2xl text-red-500">{errorMessage}</p>}
-        {uploaded && <p className="text-2xl text-green-500">Image Uploaded Successfully.</p>}
+        {uploaded && <p className="md:text-2xl text-green-500">Image Uploaded Successfully.</p>}
         <button
-          className="mx-auto w-max bg-green-500 text-5xl font-semibold px-6 py-3 rounded-lg text-white"
+          className="mx-auto w-max bg-green-500 md:text-5xl font-semibold px-3 py-2 md:px-6 md:py-3 rounded-lg text-white"
           onClick={handlePost}
         >
           Post Photo

@@ -35,9 +35,9 @@ const Login = () => {
   };
   return (
     <div className="flex-1 flex-col gap-5 flex justify-center items-center text-black dark:text-white">
-      <form className="flex flex-col gap-4 w-1/3 bg-slate-50 p-5 rounded-lg dark:bg-slate-800">
+      <form className="flex flex-col gap-4 sm:w-1/3 bg-slate-50 p-5 rounded-lg dark:bg-slate-800">
         <input
-          className="bg-slate-100 text-3xl font-semi-bold dark:bg-slate-700 outline-none rounded-md px-4 py-2"
+          className="bg-slate-100 sm:text-3xl font-semi-bold dark:bg-slate-700 outline-none rounded-md px-4 py-2"
           type="email"
           name="email"
           placeholder="Email"
@@ -46,7 +46,7 @@ const Login = () => {
           required
         />
         <input
-          className="text-3xl bg-slate-100 dark:bg-slate-700 outline-none rounded-md px-4 py-2"
+          className="sm:text-3xl bg-slate-100 dark:bg-slate-700 outline-none rounded-md px-4 py-2"
           type="password"
           name="password"
           placeholder="password"
@@ -56,29 +56,29 @@ const Login = () => {
         />
         {showError && <p className="font-semibold text-red-500">{errorMessage}</p>}
         <button
-          className="rounded-lg flex items-center bg-slate-300 dark:bg-slate-600 font-bold px-5 py-2 text-3xl gap-4 shadow-lg w-max mx-auto"
+          className="rounded-lg flex items-center bg-slate-300 dark:bg-slate-600 font-bold px-3 py-2 sm:px-5 sm:py-2 sm:text-3xl gap-4 shadow-lg w-max mx-auto"
           onClick={handleLoginWithDemo}
         >
-          <div className="text-2xl">
+          <div className="sm:text-2xl">
             <MdEmail />
           </div>
           Use Demo Email
         </button>
         <button
-          className="rounded-lg flex items-center bg-green-500 font-bold px-5 py-2 text-3xl gap-4 shadow-lg w-max mx-auto"
+          className="rounded-lg flex items-center bg-green-500 font-bold sm:px-5 sm:py-2 px-3 py-2 sm:text-3xl gap-4 shadow-lg w-max mx-auto"
           onClick={handleLogin}
         >
-          <div className="text-5xl">
+          <div className="sm:text-5xl">
             <MdEmail />
           </div>
           Login With Email
         </button>
       </form>
       <button
-        className="rounded-lg flex items-center bg-green-500 font-bold px-5 py-2 text-3xl gap-4 shadow-lg"
+        className="rounded-lg flex items-center bg-green-500 font-bold sm:px-5 sm:py-2 px-3 py-2 text-xl sm:text-3xl gap-4 shadow-lg"
         onClick={signInWithGoogle}
       >
-        <div className="text-5xl">
+        <div className="sm:text-5xl text-2xl">
           <FcGoogle />
         </div>
         Login With Google

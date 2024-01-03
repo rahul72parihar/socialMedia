@@ -12,8 +12,8 @@ const ProfileData = () => {
   };
   return (
     <div className="flex flex-col gap-3 mb-4">
-      <div className="flex justify-between gap-8 mb-4">
-        <div className="flex flex-col w-4/5 gap-4">
+      <div className="flex justify-between sm:gap-8 gap-2 mb-4">
+        <div className="flex flex-col w-4/5 gap-4 text-sm sm:text-2xl">
           <input
             readOnly
             value={data?.displayName}
@@ -43,7 +43,7 @@ const ProfileData = () => {
             className="dark:border-black dark:bg-slate-900 dark:text-white border-2 rounded-lg focus:outline-none border-white font-bold py-2 px-4 w-full resize-none"
           ></textarea>
         </div>
-        <div className="w-40">
+        <div className="sm:w-40 w-20">
           <img
             className="rounded-full dark:border-black border-white border-2 w-40 "
             src={
@@ -57,7 +57,7 @@ const ProfileData = () => {
       </div>
       {!canEdit && (
         <button
-          className="py-3 px-6 bg-green-500 text-3xl font-bold text-white rounded-lg w-min mx-auto"
+          className="sm:py-3 sm:px-6 py-2 px-3 bg-green-500 sm:text-3xl text-2xl font-bold text-white rounded-lg w-min mx-auto"
           onClick={handeEdit}
         >
           Edit
@@ -65,7 +65,7 @@ const ProfileData = () => {
       )}
       {canEdit && (
         <button
-          className="py-3 px-6 bg-green-500 text-3xl font-bold text-white rounded-lg w-min mx-auto"
+          className="sm:py-3 sm:px-6 py-2 px-3 bg-green-500 sm:text-3xl text-2xl font-bold text-white rounded-lg w-min mx-auto"
           onClick={handleSave}
         >
           Save

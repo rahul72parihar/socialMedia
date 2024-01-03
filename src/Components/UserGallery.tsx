@@ -43,7 +43,7 @@ const UserGallery = ({ userId }: any) => {
     );
   return (
     <div className=" bg-slate-100 dark:bg-slate-800 flex flex-1 flex-col items-center p-8 rounded-lg gap-8 dark:text-white w-full">
-      <h1 className=" text-5xl font-bold">YOUR POSTS</h1>
+      <h1 className="text-2xl sm:text-5xl font-bold">YOUR POSTS</h1>
       <div className=" w-full flex flex-wrap  gap-3 justify-center">
         {photos.map((photo: any, index) => (
           <div
