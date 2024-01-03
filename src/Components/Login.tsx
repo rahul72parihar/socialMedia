@@ -35,7 +35,7 @@ const Login = () => {
   };
   return (
     <div className="flex-1 flex-col gap-5 flex justify-center items-center text-black dark:text-white">
-      <form className="flex flex-col gap-4 w-9/10 mx-5 md:w-2/3 bg-slate-50 p-5 rounded-lg dark:bg-slate-800">
+      <form className="flex flex-col gap-4 mx-5 md:w-2/3 xl:w-1/3 bg-slate-50 p-5 rounded-lg dark:bg-slate-800">
         <input
           className="bg-slate-100 sm:text-3xl font-semi-bold dark:bg-slate-700 outline-none rounded-md px-4 py-2"
           type="email"
