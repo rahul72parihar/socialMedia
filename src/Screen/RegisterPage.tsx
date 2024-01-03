@@ -82,46 +82,46 @@ const RegisterPage = () => {
     <>
       <Navigation></Navigation>
       <div className="flex flex-1  justify-center items-center">
-        <form className="p-12 flex flex-col justify-center items-center bg-slate-100 dark:bg-slate-800 dark:text-white rounded-lg gap-4 w-1/2">
+        <form className=" p-4 sm:p-12 flex flex-col justify-center items-center bg-slate-100 dark:bg-slate-800 dark:text-white rounded-lg gap-4 sm:w-1/2">
           <input
             type="text"
             name="firstName"
-            className="text-2xl w-2/3 rounded-md py-2 px-4 bg-slate-200 dark:bg-slate-700  outline-none"
+            className="md:text-2xl w-2/3 rounded-md py-2 px-4 bg-slate-200 dark:bg-slate-700  outline-none"
             onChange={handleChange}
             placeholder="First Name"
           />
           <input
             type="text"
             name="secondName"
-            className="text-2xl w-2/3 rounded-md py-2 px-4 bg-slate-200 dark:bg-slate-700  outline-none"
+            className="md:text-2xl w-2/3 rounded-md py-2 px-4 bg-slate-200 dark:bg-slate-700  outline-none"
             onChange={handleChange}
             placeholder="Second Name"
           />
           <input
             type="email"
             name="email"
-            className="text-2xl w-2/3 rounded-md py-2 px-4 bg-slate-200 dark:bg-slate-700  outline-none"
+            className="md:text-2xl w-2/3 rounded-md py-2 px-4 bg-slate-200 dark:bg-slate-700  outline-none"
             onChange={handleChange}
             placeholder="Email"
           />
           <input
             type="password"
             name="password"
-            className="text-2xl w-2/3 rounded-md py-2 px-4 bg-slate-200 outline-none dark:bg-slate-700"
+            className="md:text-2xl w-2/3 rounded-md py-2 px-4 bg-slate-200 outline-none dark:bg-slate-700"
             onChange={handleChange}
             placeholder="Password"
           />
           <input
             type="password"
             name="confirmPassword"
-            className="text-2xl w-2/3 rounded-md py-2 px-4 bg-slate-200 dark:bg-slate-700 outline-none "
+            className="md:text-2xl w-2/3 rounded-md py-2 px-4 bg-slate-200 dark:bg-slate-700 outline-none "
             onChange={handleChange}
             placeholder="Confirm Password"
           />
           {showError && <p className=" text-red-500 font-semibold"> {errorMessage}</p>}
           <p className="font-semibold">Note: password must be 6 character or longer</p>
           <button
-            className="rounded-lg py-3 px-6 text-3xl font-bold bg-green-500 shadow-md"
+            className="rounded-lg sm:py-3 sm:px-6 py-2 px-3 text-xl sm:text-3xl font-bold bg-green-500 shadow-md"
             onClick={handleSubmit}
           >
             Register

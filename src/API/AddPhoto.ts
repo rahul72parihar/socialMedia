@@ -38,7 +38,7 @@ export async function deletePhotoLocal(photoUrl: any, uid: any) {
   const photoRef = ref(storage, photoUrl);
   // Delete the photo from Firebase Storage
   console.log(photoRef);
-  const metadata = await getMetadata(photoRef);
+  const metadata = await getMetadata(photoRef).catch(() => console.log("file was deleted"));
   if (metadata) {
     // Delete the photo from Firebase Storage
     await deleteObject(photoRef);

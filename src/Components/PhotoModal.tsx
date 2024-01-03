@@ -13,7 +13,7 @@ const PhotoModal = ({ closeModal, photo, uid }: any) => {
   };
   return (
     <div className=" fixed inset-0 bg-white dark:bg-black bg-opacity-50 dark:bg-opacity-50 w-full h-full text-white">
-      <div className="w-screen h-screen  flex flex-col justify-center sm:justify-start mt-20 items-center">
+      <div className="w-screen h-screen  flex flex-col justify-start mt-20 items-center">
         <img
           className="h-80 w-80 sm:w-auto sm:h-2/3 object-cover mx-auto"
           src={photo.url}
